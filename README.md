@@ -4,19 +4,7 @@ A production-style, modular three-tier architecture on AWS, built with Terraform
 
 ## Architecture
 
-    Internet
-       |
-       v
-    [ Internet Gateway ]
-       |
-       v
-    [ Public subnets: ALB, NAT Gateway ]  (2 AZs)
-       |
-       v
-    [ Private subnets: EC2 Auto Scaling Group ]  (2 AZs)
-       |
-       v
-    [ Private subnets: RDS PostgreSQL ]  (2 AZs, isolated)
+<img width="2720" height="2080" alt="three_tier_aws_architecture" src="https://github.com/user-attachments/assets/736b924f-7076-4e43-b0c6-c6a4b2886e99" />
 
 - **Public tier**: Internet Gateway, Application Load Balancer, NAT Gateway
 - **Application tier**: EC2 instances in an Auto Scaling Group, private subnets, only reachable from the ALB
